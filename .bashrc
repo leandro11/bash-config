@@ -1,5 +1,6 @@
 
 set -o emacs
+alias em='emacsclient -t -a ""'
 
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
