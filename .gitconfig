@@ -1,7 +1,8 @@
 [user]
         name = Tao
-        email = taoluo@combitel.com.au
+        email = www.luotao.net
 [alias]
+        cl = clone
         ci = commit -m
         st = status
         co = checkout
