@@ -19,8 +19,11 @@ ln -s ~/bash-config/.git-completion.bash ~/.git-completion.bash
 # for vim
 ln -s ~/bash-config/vim/ ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#ln -s ~/bash-config/vim/.vimrc ~/.vimrc
+ln -s ~/bash-config/vim/.vimrc ~/.vimrc
 vim +PluginInstall +qall
 echo "* dont forget to install / update YoucompleteMe"
 echo "* https://github.com/j1z0/dotfiles.git"
 
+# for emacs
+git clone https://github.com/luotao-au/emacs.d.git ~/bash-config/emacs.d
+ln -s ~/bash-config/emacs.d/ ~/.emacs.d

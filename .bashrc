@@ -1,12 +1,16 @@
 
 set -o emacs
 alias em='emacsclient -t -a ""'
+alias emc='emacsclient -nc -a ""'
+EDITOR='emacsclient -a ""'
 
 # for virtualenv
 alias ac="source ./env/bin/activate"
 alias de="deactivate"
 
 # for project folder
+alias down="cd /Users/ilia/Downloads"
+alias doc="cd /Users/ilia/Documents"
 alias oz="cd /Users/Tao/git/repos/ozsales"
 alias per="cd /Users/Tao/git/repos/persimmon"
 alias om="cd /Users/Tao/git/omnimw"

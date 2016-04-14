@@ -1,6 +1,6 @@
 [user]
         name = Tao
-        email = www.luotao.net
+        email = git@luotao.net
 [alias]
 	cl = clone
 	ci = commit -m

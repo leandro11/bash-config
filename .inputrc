@@ -1,11 +1,13 @@
 set editing-mode vi
 set keymap vi-command
+set keymap vi
 set show-all-if-ambiguous on  
 set completion-ignore-case on  
 set meta-flag on  
 set convert-meta off  
 set output-meta on  
-set bell-style visible  
+set bell-style visible
+set visible-stats on
 TAB: menu-complete
 
 "\C-l": clear-screen  
@@ -15,3 +17,5 @@ TAB: menu-complete
 "\C-e": end-of-line  
 "\C-f": forward-char  
 "\C-b": backward-char 
+"\ep": history-search-backward
+"\en": history-search-forward
