@@ -2,57 +2,63 @@
         name = Tao
         email = www.luotao.net
 [alias]
-        cl = clone
-        ci = commit -m
-        st = status
-        co = checkout
-        br = branch --color
-        ba = branch --color -a
+	cl = clone
+	ci = commit -m
+	st = status
+	co = checkout
+	br = branch --color
+	ba = branch --color -a
         track = branch --track
-        tr = branch --track
+	tr = branch --track
         fe = fetch --all
         up = remote update
         pl = pull
         ps = push origin HEAD
-        pstag = push origin --tags
+	pstag = push origin --tags
         apply = stash apply
         save = stash save
         pop = stash pop
-        list = stash list
-#       lg = log --name-status --color --pretty=oneline --abbrev-commit
-        di = diff --color
-        pick = cherry-pick -x
-        unstage = reset HEAD
-        last = log -1
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	list = stash list
+#	lg = log --name-status --color --pretty=oneline --abbrev-commit
+	di = diff --color
+	pick = cherry-pick
+	unstage = reset HEAD
+	last = log -1
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [push]
-        default = matching
+	default = matching
 [core]
-        excludesfile = /Users/ilia/.gitignore
+	excludesfile = /Users/ilia/.gitignore
+	editor = /usr/bin/vim
 [filter "hawser"]
-        clean = git hawser clean %f
-        smudge = git hawser smudge %f
-        required = true
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
 [difftool "sourcetree"]
-        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-        path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-        cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-        trustExitCode = true
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [color]
-        ui = auto
+  	ui = auto
 [color "branch"]
-        current = green reverse
-        local = green
-        remote = red
+  	current = green reverse
+  	local = green
+  	remote = red
 [color "diff"]
-        meta = yellow bold
-        frag = magenta bold
-        old = red bold
-        new = green bold
+  	meta = yellow bold
+  	frag = magenta bold
+  	old = red bold
+  	new = green bold
 [color "status"]
-        added = green
-        changed = blue
-        untracked = magenta
-        deleted = red
+	added = green
+	changed = blue
+	untracked = magenta
+	deleted = red
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

@@ -1,0 +1,12 @@
+.DS_Store
+.idea/*
+*~
+djcelery/
+*.log
+pip-selfcheck.json
+selenium-server-standalone-2.45.0.jar
+
+# vim-config
+.netrwhist
+/backup
+vim/bundle
