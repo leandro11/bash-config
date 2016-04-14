@@ -1,0 +1,127 @@
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export NODE_PATH=:/home/ilia/npm/lib/node_modules
+export PATH=/Users/ilia/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/ilia/.rvm/bin:/Users/ilia/.node/bin
+
+set -o emacs
+alias em='emacsclient -t -a ""'
+alias emc='emacsclient -nc -a ""'
+EDITOR='emacsclient -a ""'
+
+#alias ls='ls $LS_OPTIONS'
+#alias ll='ls $LS_OPTIONS -l'
+#alias l='ls $LS_OPTIONS -lA'
+alias rm='rm -i'
+
+alias my="mysql.server start"
+alias ac="source ./env/bin/activate"
+alias de="deactivate"
+
+alias oz="cd /Users/Tao/git/repos/ozsales"
+alias per="cd /Users/Tao/git/repos/persimmon"
+alias om="cd /Users/Tao/git/omnimw"
+alias down="cd /Users/ilia/Downloads"
+
+alias test="python manage.py test --noinput --nologcapture -s "
+alias shell_plus="python manage.py shell_plus"
+alias code="python manage.py code"
+alias makemigrations="python manage.py makemigrations"
+alias migrate="python manage.py migrate"
+alias collectstatic="python manage.py collectstatic --noinput"
+alias manage="python manage.py"
+
+alias pilot="ssh pilot"
+alias pilot-develop="ssh pilot-develop"
+alias debian="ssh debian"
+alias luotao="ssh luotao"
+alias zkdr="ssh zkdr"
+
+function sr {
+find . -type f -exec sed -i '' s/$1/$2/g {} +
+}
+
+function col {
+awk -v col=$1 '{print $col}'
+}
+
+# USAGE:
+# s bookmarkname - saves the curr dir as bookmarkname
+# g bookmarkname - jumps to the that bookmark
+# g b[TAB] - tab completion is available
+# l - list all bookmarks
+
+# save current directory to bookmarks
+touch ~/.sdirs
+function s {
+cat ~/.sdirs | grep -v "export DIR_$1=" > ~/.sdirs1
+mv ~/.sdirs1 ~/.sdirs
+echo "export DIR_$1=$PWD" >> ~/.sdirs
+}
+
+# jump to bookmark
+function g {
+source ~/.sdirs
+cd $(eval $(echo echo $(echo \$DIR_$1)))
+}
+
+# list bookmarks with dirnam
+function l {
+source ~/.sdirs
+env | grep "^DIR_" | cut -c5- | grep "^.*="
+}
+# list bookmarks without dirname
+function _l {
+source ~/.sdirs
+env | grep "^DIR_" | cut -c5- | grep "^.*=" | cut -f1 -d "="
+}
+
+# completion command for g
+function _gcomp {
+local curw
+COMPREPLY=()
+curw=${COMP_WORDS[COMP_CWORD]}
+COMPREPLY=($(compgen -W '`_l`' -- $curw))
+return 0
+}
+
+# bind completion command for g to _gcomp
+complete -F _gcomp g
+
+# copy ssh key to server: dur key user@somehost
+function dur {
+case $1 in
+clone|cl)
+git clone git@bitbucket.org:nicolapaolucci/$2.git
+;;
+move|mv)
+git remote add bitbucket git@bitbucket.org:nicolapaolucci/$(basename $(pwd)).git
+git push --all bitbucket
+;;
+trackall|tr)
+#track all remote branches of a project
+for remote in $(git branch -r | grep -v master ); do git checkout --track $remote ; done
+;;
+key|k)
+#track all remote branches of a project
+ssh $2 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+;;
+fun|f)
+#list all custom bash functions defined
+typeset -F | col 3 | grep -v _ | xargs | fold -sw 60
+;;
+def|d)
+#show definition of function $1
+typeset -f $2
+;;
+help|h|*)
+echo "[dur]dn shell automation tools"
+echo "commands available:"
+echo " [cl]one, [mv|move]"
+echo " [f]fun lists all bash functions defined in .bashrc"
+echo " [def] <fun> lists definition of function defined in .bashrc"
+echo " [k]ey <host> copies ssh key to target host"
+echo " [tr]ackall], [h]elp"
+;;
+esac
+}
+
