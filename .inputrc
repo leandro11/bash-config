@@ -1,6 +1,5 @@
-set editing-mode vi
-set keymap vi-command
-set keymap vi
+set editing-mode emacs
+set keymap emacs
 set show-all-if-ambiguous on  
 set completion-ignore-case on  
 set meta-flag on  
