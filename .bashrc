@@ -1,5 +1,4 @@
 
-set -o emacs
 alias em='emacsclient -t -a ""'
 alias emc='emacsclient -nc -a ""'
 EDITOR='emacsclient -a ""'
