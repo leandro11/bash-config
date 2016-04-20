@@ -1,5 +1,4 @@
 
-set -o emacs
 alias em='emacsclient -t -a ""'
 alias emc='emacsclient -nc -a ""'
 EDITOR='emacsclient -a ""'
@@ -9,11 +8,12 @@ alias ac="source ./env/bin/activate"
 alias de="deactivate"
 
 # for project folder
-alias down="cd /Users/ilia/Downloads"
-alias doc="cd /Users/ilia/Documents"
-alias oz="cd /Users/Tao/git/repos/ozsales"
-alias per="cd /Users/Tao/git/repos/persimmon"
-alias om="cd /Users/Tao/git/omnimw"
+alias down="cd ~/Downloads"
+alias doc="cd ~/Documents"
+alias work="cd ~/Workspace"
+alias oz="cd ~/Workspace/ozsales"
+alias per="cd ~/Workspace/persimmon"
+alias om="cd ~/Workspace/omnimw"
 
 # for django
 alias test="python manage.py test --noinput --nologcapture -s --with-xcoverage --xcoverage-file=$TEST_RESULTS_DIR/coverage.xml --with-xunit --xunit-file=$TEST_RESULTS_DIR/nosetests.xml --cover-package=middleware --cover-branches --cover-erase --exclude-dir=middleware/apps/news/tests --exclude-test=middleware.apps.activities.tests.test_ui.TestActivityUIViewIndex"
