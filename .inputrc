@@ -1,6 +1,5 @@
-set editing-mode vi
-set keymap vi-command
-set keymap vi
+set editing-mode emacs
+set keymap emacs
 set show-all-if-ambiguous on  
 set completion-ignore-case on  
 set meta-flag on  
@@ -8,7 +7,7 @@ set convert-meta off
 set output-meta on  
 set bell-style visible
 set visible-stats on
-TAB: menu-complete
+#TAB: menu-complete
 
 "\C-l": clear-screen  
 "\C-n": next-history  
