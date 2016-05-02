@@ -5,6 +5,7 @@
 	cl = clone
 	ci = commit -m
 	st = status
+	mg = merge
 	co = checkout
 	br = branch --color
 	ba = branch --color -a
