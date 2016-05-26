@@ -16,6 +16,9 @@ ln -s ~/bash-config/.gitignore ~/.gitignore
 #echo "ln -s ~/bash-config/.git-completion.bash ~/.git-completion.bash"
 ln -s ~/bash-config/.git-completion.bash ~/.git-completion.bash
 
+# for ssh
+ln -s .ssh/config ~/.ssh/config
+
 # for vim
 ln -s ~/bash-config/vim/ ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -27,3 +30,6 @@ echo "* https://github.com/j1z0/dotfiles.git"
 # for emacs
 git clone https://github.com/luotao-au/emacs.d.git ~/bash-config/emacs.d
 ln -s ~/bash-config/emacs.d/ ~/.emacs.d
+
+source ~/.bash_profile
+source ~/.bashrc
