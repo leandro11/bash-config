@@ -1,1 +1,1 @@
-/Applications/Karabiner.app/Contents/Library/bin/karabiner export > ~/bash-config/karabiner/settings.sh
+/Applications/Karabiner.app/Contents/Library/bin/karabiner export > settings.sh
