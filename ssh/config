@@ -1,0 +1,16 @@
+
+Host        luotao
+    HostName        115.29.37.240
+    Port            54199
+    User            luotao
+    IdentityFile    ~/.ssh/id_rsa
+
+Host        yzrt
+    HostName        123.57.1.39
+    Port            54199
+    User            root
+
+Host        zkdr
+    HostName        61.4.83.115
+    Port            54199
+    User            luotao

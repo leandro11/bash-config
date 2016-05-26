@@ -14,6 +14,7 @@ alias work="cd ~/Workspace"
 alias oz="cd ~/Workspace/ozsales"
 alias per="cd ~/Workspace/persimmon"
 alias om="cd ~/Workspace/omnimw"
+alias bashconfig="cd ~/bash-config/"
 
 # for django
 alias test="python manage.py test --noinput --nologcapture -s --with-xcoverage --xcoverage-file=$TEST_RESULTS_DIR/coverage.xml --with-xunit --xunit-file=$TEST_RESULTS_DIR/nosetests.xml --cover-package=middleware --cover-branches --cover-erase --exclude-dir=middleware/apps/news/tests --exclude-test=middleware.apps.activities.tests.test_ui.TestActivityUIViewIndex"
