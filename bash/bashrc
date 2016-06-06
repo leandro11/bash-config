@@ -2,10 +2,13 @@
 alias em='emacsclient -t -a ""'
 alias emc='emacsclient -nc -a ""'
 EDITOR='emacsclient -a ""'
+# C-S for forward-i-search in emacs bash
+[[ $- == *i* ]] && stty -ixon
 
 # for virtualenv
 alias ac="source ./env/bin/activate"
 alias de="deactivate"
+alias my="mysql.server start"
 
 # for project folder
 alias down="cd ~/Downloads"
