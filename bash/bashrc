@@ -2,18 +2,21 @@
 alias em='emacsclient -t -a ""'
 alias emc='emacsclient -nc -a ""'
 EDITOR='emacsclient -a ""'
+# C-S for forward-i-search in emacs bash
+[[ $- == *i* ]] && stty -ixon
 
 # for virtualenv
 alias ac="source ./env/bin/activate"
 alias de="deactivate"
+alias my="mysql.server start"
 
 # for project folder
 alias down="cd ~/Downloads"
-alias doc="cd ~/Documents"
-alias work="cd ~/Workspace"
-alias oz="cd ~/Workspace/ozsales"
-alias per="cd ~/Workspace/persimmon"
-alias om="cd ~/Workspace/omnimw"
+#alias doc="cd ~/Documents"
+#alias work="cd ~/Workspace"
+alias oz="cd /Users/Tao/git/repos/ozsales"
+alias per="cd /Users/Tao/git/repos/persimmon"
+alias om="cd /Users/Tao/git/omnimw"
 alias bashconfig="cd ~/bash-config/"
 
 # for django
