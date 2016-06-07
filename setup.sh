@@ -1,19 +1,22 @@
 #!/bin/bash
 
+# setup iterm2 integration plugin
+curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
+
 # for bash
-#echo "ln -s bash/bash_profile ~/.bash_profile"
+# echo "ln -s bash/bash_profile ~/.bash_profile"
 ln -s $(pwd)/bash/bash_profile ~/.bash_profile
-#echo "ln -s bash/bashrc ~/.bashrc"
+# echo "ln -s bash/bashrc ~/.bashrc"
 ln -s $(pwd)/bash/bashrc ~/.bashrc
 #echo "ln -s bash/inputrc ~/.inputrc"
 ln -s $(pwd)/bash/inputrc ~/.inputrc
 
 # for git
-#echo "ln -s git/gitconfig ~/.gitconfig"
+# echo "ln -s git/gitconfig ~/.gitconfig"
 ln -s $(pwd)/git/gitconfig ~/.gitconfig
-#echo "ln -s git/gitignore ~/.gitignore"
+# echo "ln -s git/gitignore ~/.gitignore"
 ln -s $(pwd)/git/gitignore ~/.gitignore
-#echo "ln -s git/git-completion.bash ~/.git-completion.bash"
+# echo "ln -s git/git-completion.bash ~/.git-completion.bash"
 ln -s $(pwd)/git/git-completion.bash ~/.git-completion.bash
 
 # for ssh
