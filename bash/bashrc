@@ -35,6 +35,7 @@ alias manage="python manage.py"
 alias pilot="ssh pilot"
 alias debian="ssh debian"
 alias luotao="ssh luotao"
+alias pilot-develop="ssh pilot-develop"
 
 # for docker
 #alias dc="docker"
