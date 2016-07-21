@@ -4,6 +4,8 @@
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
 # for bash
+brew install bash-completion
+ln -s $(pwd)/bash/bash_completion ~/.bash_completion
 # echo "ln -s bash/bash_profile ~/.bash_profile"
 ln -s $(pwd)/bash/bash_profile ~/.bash_profile
 # echo "ln -s bash/bashrc ~/.bashrc"
