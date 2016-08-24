@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo pip install virtualenv
+
 # setup iterm2 integration plugin
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
