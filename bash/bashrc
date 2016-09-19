@@ -22,8 +22,8 @@ alias oz="cd ~/Workspace/ozsales"
 alias per="cd ~/Workspace/persimmon"
 alias om="cd ~/Workspace/omnimw"
 alias bashconfig="cd ~/bash-config/"
-alias aimeipin="cd /Users/Tao/git/aimeipin"
-alias sms="cd /Users/Tao/AndroidStudioProjects/SMSRedirector"
+alias aimeipin="cd ~/Workspace/aimeipin"
+alias sms="cd ~/Workspace/AndroidStudioProjects/SMSRedirector"
 
 # for django
 alias djtest="python manage.py test --noinput --nologcapture -s --with-xcoverage --xcoverage-file=$TEST_RESULTS_DIR/coverage.xml --with-xunit --xunit-file=$TEST_RESULTS_DIR/nosetests.xml --cover-package=middleware --cover-branches --cover-erase --exclude-dir=middleware/apps/news/tests --exclude-test=middleware.apps.activities.tests.test_ui.TestActivityUIViewIndex"
@@ -57,9 +57,6 @@ alias luotao="ssh luotao"
 #alias dcrminone="docker rmi $(docker images | grep "^<none>" | awk -F' ' '{ print $3}')"
 #alias dcrmix="docker images | awk '/^<none>/ {print $3}' | xargs docker rmi"
 
-JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_HOME
-
 gittag() {
 	if [ -z "$1" ]
 		then
@@ -74,6 +71,9 @@ gittag() {
 	git tag $TAGNAME
 	git push origin --tags
 }
-
 alias gittag=gittag
 
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME/bin
+export PATH
