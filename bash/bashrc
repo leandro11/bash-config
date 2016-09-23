@@ -75,4 +75,4 @@ gittag() {
 }
 
 alias tag=gittag
-
+alias bashrc=". ~/.bashrc"
