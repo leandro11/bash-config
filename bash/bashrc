@@ -71,7 +71,8 @@ gittag() {
 	git tag $TAGNAME
 	git push origin --tags
 }
-alias gittag=gittag
+
+alias tag=gittag
 
 JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_HOME
