@@ -75,5 +75,5 @@ gittag() {
 	git push origin --tags
 }
 
-alias gittag=gittag
+alias tag=gittag
 
