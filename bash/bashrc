@@ -24,6 +24,7 @@ alias om="cd ~/Workspace/omnimw"
 alias bashconfig="cd ~/bash-config/"
 alias aimeipin="cd ~/Workspace/aimeipin"
 alias sms="cd ~/Workspace/AndroidStudioProjects/SMSRedirector"
+alias taobao="cd ~/Workspace/taobao"
 
 # for django
 alias djtest="python manage.py test --noinput --nologcapture -s --with-xcoverage --xcoverage-file=$TEST_RESULTS_DIR/coverage.xml --with-xunit --xunit-file=$TEST_RESULTS_DIR/nosetests.xml --cover-package=middleware --cover-branches --cover-erase --exclude-dir=middleware/apps/news/tests --exclude-test=middleware.apps.activities.tests.test_ui.TestActivityUIViewIndex"
