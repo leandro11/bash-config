@@ -49,8 +49,8 @@ alias luotao="ssh luotao"
 #alias dcrmix="docker images | awk '/^<none>/ {print $3}' | xargs docker rmi"
 
 # for system
-alias ls='ls -Gaf'
-alias ll='ls -lGaf'
+alias ls='ls -af'
+alias ll='ls -laf'
 alias rmi='rm -i' 
 alias rm='rm -i' 
 alias mvi='mv -i' 
