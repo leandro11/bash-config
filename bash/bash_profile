@@ -1,24 +1,30 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH
+
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME/bin
+export PATH
 
 #export PS1="\[\e[32m\][\[\e[35m\]\u\[\e[m\]@\[\e[36m\]\h \[\e[31m\]\w\[\e[32m\]]\[\e[36m\]$\[\e[m\]"
 export PS1="\[\e[32m\][\[\e[31m\]\W\[\e[32m\]]\[\e[36m\]$\[\e[m\]"
 
-alias ls='ls -Gaf'
-alias ll='ls -lGaf'
-alias rmi='rm -i' 
-alias rm='rm -i' 
-alias mvi='mv -i' 
-alias mv='mv -i' 
-
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
-fi
-
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
 fi
 
 if [ -f ~/bash_completion ]; then
     . ~/bash_completion
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+if [[ $(uname -s) == "Darwin" ]]; then
+	test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+fi
