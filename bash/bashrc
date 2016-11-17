@@ -1,17 +1,9 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
 
-alias em='emacsclient -t -a ""'
-alias emc='emacsclient -nc -a ""'
-EDITOR='emacsclient -a ""'
-# C-S for forward-i-search in emacs bash
-[[ $- == *i* ]] && stty -ixon
-
-# for find
-alias findf="find . -type f | xargs grep -s -R -n " 
-
-# for virtualenv
-alias ac="source ./env/bin/activate"
-alias de="deactivate"
-alias my="mysql.server start"
+# User specific aliases and functions
 
 # for project folder
 alias down="cd ~/Downloads"
@@ -57,9 +49,31 @@ alias pilot-develop="ssh pilot-develop"
 #alias dcrminone="docker rmi $(docker images | grep "^<none>" | awk -F' ' '{ print $3}')"
 #alias dcrmix="docker images | awk '/^<none>/ {print $3}' | xargs docker rmi"
 
-JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_HOME
+# for system
+alias ls='ls -Gaf'
+alias ll='ls -lGaf'
+alias rmi='rm -i' 
+alias rm='rm -i' 
+alias mvi='mv -i' 
+alias mv='mv -i' 
+alias bashrc=". ~/.bashrc"
 
+# for emacs
+alias em='emacsclient -t -a ""'
+alias emc='emacsclient -nc -a ""'
+EDITOR='emacsclient -a ""'
+# C-S for forward-i-search in emacs bash
+[[ $- == *i* ]] && stty -ixon
+
+# for find
+alias findf="find . -type f | xargs grep -s -R -n " 
+
+# for virtualenv
+alias ac="source ./env/bin/activate"
+alias de="deactivate"
+alias my="mysql.server start"
+
+# for git
 gittag() {
 	if [ -z "$1" ]
 		then
@@ -74,6 +88,4 @@ gittag() {
 	git tag $TAGNAME
 	git push origin --tags
 }
-
 alias tag=gittag
-alias bashrc=". ~/.bashrc"
