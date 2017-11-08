@@ -31,7 +31,7 @@
 	default = matching
 [core]
 	excludesfile = /Users/ilia/.gitignore
-	editor = /usr/local/bin/vim
+	#editor = /usr/local/bin/vim
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
