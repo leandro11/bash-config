@@ -8,8 +8,18 @@ Host        zkdr
     Port            54199
     User            luotao
 
+Host        lorne
+    HostName        lorne-luo-dev
+    User            lorne.luo
+    IdentityFile    ~/.ssh/id_rsa
+
 Host        luotao
-    HostName        120.77.63.68
-    Port            54199
+    HostName        47.91.45.25
     User            root
     IdentityFile    ~/.ssh/id_rsa
+
+Host        luotao.sz
+    HostName        119.23.79.1
+    User            root
+    IdentityFile    ~/.ssh/id_rsa
+
