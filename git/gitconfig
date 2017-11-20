@@ -1,6 +1,6 @@
 [user]
-        name = Tao
-        email = git@luotao.net
+        name = Lorne
+        email = dev@luotao.net
 [alias]
 	cl = clone
 	ci = commit -m
@@ -26,12 +26,13 @@
 	unstage = reset HEAD
 	last = log -1
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	contrib = shortlog --no-merges -s -n
 
 [push]
 	default = matching
 [core]
-	excludesfile = /Users/ilia/.gitignore
-	editor = /usr/local/bin/vim
+	excludesfile = ~/.gitignore
+	editor = vim
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
