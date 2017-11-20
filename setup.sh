@@ -28,6 +28,7 @@ echo ". $(pwd)/bash/bash_profile" >> ~/.bash_profile
 # addon .bashrc
 ln -s $(pwd)/bash/bash_aliases ~/.bash_aliases
 echo ". ~/.bash_aliases" >> ~/.bashrc
+echo ". $(pwd)/bash/aliases.office" >> ~/.bashrc
 # addon .inputrc
 echo '$include'  "$(pwd)/bash/inputrc" >> ~/.inputrc
 

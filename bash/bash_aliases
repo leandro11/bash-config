@@ -10,12 +10,6 @@ if [[ $(uname -s) == "Linux" ]]; then
     alias ngx="service nginx restart"
 fi
 
-# for project folder
-alias oz="cd ~/Workspace/lorne/ozsales"
-alias bashconfig="cd ~/Workspace/bash-config/"
-alias fq='cd ~/Workspace/butterfly/freightquotes/'
-alias fodmap='cd ~/Workspace/fodmap-platform/'
-
 # for ssh
 alias lorne="ssh lorne-luo-dev"
 alias luotao="ssh root@luotao"
@@ -49,6 +43,7 @@ alias ~="cd ~"
 alias cd..='cd ../'
 alias ..='cd ../'
 alias ...='cd ../../'
+alias mkdir='mkdir -pv'
 
 # find text in all files under current folder
 alias findf="find . -type f | xargs grep -s -R -n "
