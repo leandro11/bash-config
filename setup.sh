@@ -1,19 +1,34 @@
 #!/bin/bash
 
-sudo pip install virtualenv
 
-# setup iterm2 integration plugin
-curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
+SYSTEM=$(python -c "import platform; print(platform.system())" 2>&1)
+case "$SYSTEM" in
+  *Darwin*) OS="Mac" ;;
+  *Linux*) OS=$(python -c "import platform; print(platform.dist()[0])" 2>&1) ;;
+  *) OS="Other" ;;
+esac
+OS=`echo $OS | tr '[:upper:]' '[:lower:]'`
+
+if [ "$OS" = "mac" ]; then
+   echo "Configuring for Mac..."
+   # setup iterm2 integration plugin
+   curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+   brew install bash-completion
+fi
+
+if [ "$OS" = "centos" ]; then
+   echo "Configuring for Centos..."
+   yum install -y bash-completion bash-completion-extras
+fi
 
 # for bash
-brew install bash-completion
 ln -s $(pwd)/bash/bash_completion ~/.bash_completion
-# echo "ln -s bash/bash_profile ~/.bash_profile"
-ln -s $(pwd)/bash/bash_profile ~/.bash_profile
-# echo "ln -s bash/bashrc ~/.bashrc"
-ln -s $(pwd)/bash/bashrc ~/.bashrc
-#echo "ln -s bash/inputrc ~/.inputrc"
-ln -s $(pwd)/bash/inputrc ~/.inputrc
+# addon .bash_profile
+echo ". $(pwd)/bash/.bash_profile" >> ~/.bash_profile
+# addon .bashrc
+echo ". $(pwd)/bash/.bashrc_aliases" >> ~/.bashrc
+# addon .inputrc
+echo '$include'  "$(pwd)/bash/inputrc" >> ~/.inputrc
 
 # for git
 # echo "ln -s git/gitconfig ~/.gitconfig"
@@ -35,8 +50,8 @@ echo "* dont forget to install / update YoucompleteMe"
 echo "* https://github.com/j1z0/dotfiles.git"
 
 # for emacs
-git clone https://github.com/luotao-au/emacs.d.git emacs.d
-ln -s $(pwd)/emacs.d/ ~/.emacs.d
+#git clone https://github.com/luotao-au/emacs.d.git emacs.d
+#ln -s $(pwd)/emacs.d/ ~/.emacs.d
 
 source ~/.bash_profile
 source ~/.bashrc
