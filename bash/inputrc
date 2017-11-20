@@ -9,12 +9,3 @@ set bell-style visible
 set visible-stats on
 #TAB: menu-complete
 
-"\C-l": clear-screen  
-"\C-n": next-history  
-"\C-p": previous-history  
-"\C-a": beginning-of-line  
-"\C-e": end-of-line  
-"\C-f": forward-char  
-"\C-b": backward-char 
-"\ep": history-search-backward
-"\en": history-search-forward

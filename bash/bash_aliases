@@ -1,0 +1,67 @@
+
+if [[ $(uname -s) == "Darwin" ]]; then
+	alias my="mysql.server start"
+	alias down="cd ~/Downloads"
+    alias doc="cd ~/Documents"
+    alias work="cd ~/Workspace"
+fi
+
+if [[ $(uname -s) == "Linux" ]]; then
+
+fi
+
+# for project folder
+alias oz="cd ~/Workspace/lorne/ozsales"
+alias bashconfig="cd ~/Workspace/bash-config/"
+alias fq='cd ~/Workspace/butterfly/freightquotes/'
+alias fodmap='cd ~/Workspace/fodmap-platform/'
+
+# for ssh
+alias lorne="ssh lorne-luo-dev"
+alias luotao="ssh root@luotao"
+alias luotao.sz="ssh root@luotao.sz"
+
+# for dev
+alias ac="source ./env/bin/activate"
+alias de="deactivate"
+
+# for django
+alias djtest="python manage.py test --noinput --nologcapture -s "
+alias shell_plus="python manage.py shell_plus"
+alias migrate="python manage.py migrate"
+alias makemigrations="python manage.py makemigrations"
+alias showmigrations="python manage.py showmigrations"
+alias showmi="python manage.py showmigrations"
+alias code="python manage.py code"
+alias collectstatic="python manage.py collectstatic --noinput"
+alias manage="python manage.py "
+
+# for OS
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ls='ls $LS_OPTIONS -A'
+alias ll='ls $LS_OPTIONS -lAF'
+alias l='ls $LS_OPTIONS -lA'
+alias la='ls -A'
+alias bash_alias='. ~/.bash_aliases'
+
+# find text in all files under current folder
+alias findf="find . -type f | xargs grep -s -R -n "
+
+# for git, add tag and push (overwrite existed)
+gittag() {
+	if [ -z "$1" ]
+		then
+	  		echo "Please input tag name."
+	  		exit 0
+	fi
+
+	TAGNAME=$1
+	git tag -d $TAGNAME
+	git push origin :refs/tags/$TAGNAME
+	git push origin HEAD
+	git tag $TAGNAME
+	git push origin --tags
+}
+alias tag=gittag

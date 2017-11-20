@@ -1,0 +1,17 @@
+# for docker
+alias dc="docker"
+alias dcps="docker ps"
+alias dcpl="docker pull"
+alias dcpsa="docker ps -a"
+alias dci="docker images"
+alias dcrm="docker rm"
+alias dcrmi="docker rmi"
+alias dcrun="docker run -it -u='root'"
+alias dcexe="docker exec -it -u='root'"
+alias dcrmx='docker rm $(docker ps -q -f status=exited)'
+alias dcrmx='docker ps -q -f status=exited | xargs docker rm'
+alias dcrmall='docker rm -f $(docker ps -q -a)'
+alias dcstopall='docker stop $(docker ps -q)'
+alias dl='docker ps -l -q'
+alias dcrminone="docker rmi $(docker images | grep "^<none>" | awk -F' ' '{ print $3}')"
+alias dcrmix="docker images | awk '/^<none>/ {print $3}' | xargs docker rmi"
