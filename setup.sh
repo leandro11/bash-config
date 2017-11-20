@@ -24,9 +24,10 @@ fi
 # for bash
 ln -s $(pwd)/bash/bash_completion ~/.bash_completion
 # addon .bash_profile
-echo ". $(pwd)/bash/.bash_profile" >> ~/.bash_profile
+echo ". $(pwd)/bash/bash_profile" >> ~/.bash_profile
 # addon .bashrc
-echo ". $(pwd)/bash/.bashrc_aliases" >> ~/.bashrc
+ln -s $(pwd)/bash/bash_aliases ~/.bash_aliases
+echo ". ~/.bash_aliases" >> ~/.bashrc
 # addon .inputrc
 echo '$include'  "$(pwd)/bash/inputrc" >> ~/.inputrc
 

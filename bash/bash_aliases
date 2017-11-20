@@ -7,7 +7,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 if [[ $(uname -s) == "Linux" ]]; then
-
+    alias ngx="service nginx restart"
 fi
 
 # for project folder
@@ -44,7 +44,11 @@ alias ls='ls $LS_OPTIONS -A'
 alias ll='ls $LS_OPTIONS -lAF'
 alias l='ls $LS_OPTIONS -lA'
 alias la='ls -A'
-alias bash_alias='. ~/.bash_aliases'
+alias aliases='. ~/.bash_aliases'
+alias ~="cd ~"
+alias cd..='cd ../'
+alias ..='cd ../'
+alias ...='cd ../../'
 
 # find text in all files under current folder
 alias findf="find . -type f | xargs grep -s -R -n "
