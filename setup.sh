@@ -27,6 +27,7 @@ ln -s $(pwd)/bash/bash_completion ~/.bash_completion
 echo ". $(pwd)/bash/bash_profile" >> ~/.bash_profile
 # addon .bashrc
 ln -s $(pwd)/bash/bash_aliases ~/.bash_aliases
+ln -s $(pwd)/bash/aliases.office ~/.aliases.office
 echo ". ~/.bash_aliases" >> ~/.bashrc
 echo ". $(pwd)/bash/aliases.office" >> ~/.bashrc
 # addon .inputrc
