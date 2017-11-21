@@ -1,6 +1,9 @@
 alias lorne="ssh lorne-luo-dev"
 
 alias ac=". ./venv/bin/activate"
+alias mgdb="sudo mongod --fork --syslog"
+alias redis="redis-server --daemonize yes"
+
 alias oz="cd ~/Workspace/lorne/ozsales"
 alias bashconfig="cd ~/Workspace/bash-config/"
 alias fq='cd ~/Workspace/butterfly/freightquotes/'

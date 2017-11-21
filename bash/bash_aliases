@@ -21,6 +21,9 @@ alias bashconfig="cd ~/bash-config/"
 alias aimeipin="cd ~/Workspace/aimeipin"
 alias sms="cd ~/Workspace/AndroidStudioProjects/SMSRedirector"
 alias taobao="cd ~/Workspace/taobao"
+alias quax='cd ~/Workspace/butterfly/quax'
+alias quaxcms='cd ~/Workspace/butterfly/quax/quax-cms'
+
 
 # for ssh
 alias luotao="ssh root@luotao"
@@ -55,6 +58,9 @@ alias cd..='cd ../'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias mkdir='mkdir -pv'
+alias which='type -all'    # which:        Find executables
+alias path='echo -e ${PATH//:/\\n}' 
+alias qfind="find . -name "
 
 # find text in all files under current folder
 alias findf="find . -type f | xargs grep -s -R -n "
