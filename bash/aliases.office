@@ -3,6 +3,8 @@ alias lorne="ssh lorne-luo-dev"
 alias ac=". ./venv/bin/activate"
 alias mgdb="sudo mongod --fork --syslog"
 alias redis="redis-server --daemonize yes"
+alias rabbit="/usr/local/opt/rabbitmq/sbin/rabbitmq-server -detached"
+
 
 alias oz="cd ~/Workspace/lorne/ozsales"
 alias bashconfig="cd ~/Workspace/bash-config/"
