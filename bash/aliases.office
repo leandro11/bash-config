@@ -1,3 +1,5 @@
+alias lorne="ssh lorne-luo-dev"
+
 alias ac=". ./venv/bin/activate"
 alias oz="cd ~/Workspace/lorne/ozsales"
 alias bashconfig="cd ~/Workspace/bash-config/"

@@ -24,12 +24,13 @@ fi
 # for bash
 ln -s $(pwd)/bash/bash_completion ~/.bash_completion
 # addon .bash_profile
-echo ". $(pwd)/bash/bash_profile" >> ~/.bash_profile
+ln -s $(pwd)/bash/bash_profile ~/.profile
+echo "test -f ~/.profile && . ~/.profile" >> ~/.bash_profile
 # addon .bashrc
 ln -s $(pwd)/bash/bash_aliases ~/.bash_aliases
 ln -s $(pwd)/bash/aliases.office ~/.aliases.office
-echo ". ~/.bash_aliases" >> ~/.bashrc
-echo ". $(pwd)/bash/aliases.office" >> ~/.bashrc
+echo "test -f ~/.bash_aliases && . ~/.bash_aliases" >> ~/.bashrc
+echo "test -f ~/.aliases.office && . ~/.aliases.office" >> ~/.bashrc
 # addon .inputrc
 echo '$include'  "$(pwd)/bash/inputrc" >> ~/.inputrc
 

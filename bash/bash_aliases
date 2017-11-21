@@ -2,16 +2,27 @@
 if [[ $(uname -s) == "Darwin" ]]; then
 	alias my="mysql.server start"
 	alias down="cd ~/Downloads"
-    alias doc="cd ~/Documents"
-    alias work="cd ~/Workspace"
+	alias doc="cd ~/Documents"
+	alias work="cd ~/Workspace"
 fi
 
 if [[ $(uname -s) == "Linux" ]]; then
     alias ngx="service nginx restart"
 fi
 
+# for project folder
+alias work="cd ~/Workspace"
+alias butterfly="cd ~/Workspace/butterfly"
+alias android="cd ~/Workspace/AndroidStudioProjects"
+alias oz="cd ~/Workspace/ozsales"
+alias per="cd ~/Workspace/persimmon"
+alias om="cd ~/Workspace/omnimw"
+alias bashconfig="cd ~/bash-config/"
+alias aimeipin="cd ~/Workspace/aimeipin"
+alias sms="cd ~/Workspace/AndroidStudioProjects/SMSRedirector"
+alias taobao="cd ~/Workspace/taobao"
+
 # for ssh
-alias lorne="ssh lorne-luo-dev"
 alias luotao="ssh root@luotao"
 alias luotao.sz="ssh root@luotao.sz"
 
