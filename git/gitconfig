@@ -1,6 +1,6 @@
 [user]
-        name = Lorne
         email = dev@luotao.net
+	name = Lorne
 [alias]
 	cl = clone
 	ci = commit -m
@@ -9,18 +9,18 @@
 	co = checkout
 	br = branch --color
 	ba = branch --color -a
-        track = branch --track
+	track = branch --track
 	tr = branch --track
-        fe = fetch --all
-        up = remote update
-        pl = pull
-        ps = push origin HEAD
+	fe = fetch --all
+	up = remote update
+	pl = pull
+	ps = !sh -c 'git push ${1:-origin} HEAD' -
 	pstag = push origin --tags
-        apply = stash apply
-        save = stash save
-        pop = stash pop
+	apply = stash apply
+	save = stash save
+	pop = stash pop
 	list = stash list
-#	lg = log --name-status --color --pretty=oneline --abbrev-commit
+	lgm = log --name-status --color --pretty=oneline --abbrev-commit
 	di = diff --color
 	pick = cherry-pick
 	unstage = reset HEAD

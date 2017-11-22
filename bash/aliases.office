@@ -11,4 +11,4 @@ alias bashconfig="cd ~/Workspace/bash-config/"
 alias fq='cd ~/Workspace/butterfly/freightquotes/'
 alias fodmap='cd ~/Workspace/butterfly/fodmap-platform/'
 alias butterfly='cd ~/Workspace/butterfly/'
-
+alias quaxstart="redis && mgdb && rabbit"
