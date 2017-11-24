@@ -28,6 +28,7 @@ alias quaxcms='cd ~/Workspace/butterfly/quax/quax-cms'
 # for ssh
 alias luotao="ssh root@luotao"
 alias luotao.sz="ssh root@luotao.sz"
+alias aimeipin.cc="ssh root@aimeipin"
 
 # for dev
 alias ac="source ./env/bin/activate"
