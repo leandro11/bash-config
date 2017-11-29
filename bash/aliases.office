@@ -1,7 +1,9 @@
+export VENV=./venv
+
 alias lorne="ssh lorne-luo-dev"
 
 alias ac=". ./venv/bin/activate"
-alias mgdb="sudo mongod --fork --syslog"
+alias mgdb="sudo mongod --dbpath /Users/lorne.luo/Workspace/butterfly/quax/quax-mongodb --fork --syslog"
 alias redis="redis-server --daemonize yes"
 alias rabbit="/usr/local/opt/rabbitmq/sbin/rabbitmq-server -detached"
 

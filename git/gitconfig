@@ -9,6 +9,7 @@
 	co = checkout
 	br = branch --color
 	ba = branch --color -a
+	brdel = push origin --delete
 	track = branch --track
 	tr = branch --track
 	fe = fetch --all
