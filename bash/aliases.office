@@ -14,3 +14,10 @@ alias fq='cd ~/Workspace/butterfly/freightquotes/'
 alias fodmap='cd ~/Workspace/butterfly/fodmap-platform/'
 alias butterfly='cd ~/Workspace/butterfly/'
 alias quaxstart="redis && mgdb && rabbit"
+
+# quax prod
+alias sshquaxapi='ssh -i "/Users/lorne.luo/.ssh/quax-PROD.pem" ubuntu@52.65.218.40'
+alias sshquaxcms='ssh -i "/Users/lorne.luo/.ssh/quax-PROD.pem" ubuntu@54.79.84.254'
+alias sshquaxweb='ssh -i "/Users/lorne.luo/.ssh/quax-PROD.pem" ubuntu@52.65.179.111'
+alias sshquaxnoti='ssh -i "/Users/lorne.luo/.ssh/quax-PROD.pem" ubuntu@52.65.179.111'
+
