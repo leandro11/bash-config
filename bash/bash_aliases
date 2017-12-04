@@ -68,17 +68,20 @@ alias findf="find . -type f | xargs grep -s -R -n "
 
 # for git, add tag and push (overwrite existed)
 gittag() {
-	if [ -z "$1" ]
-		then
-	  		echo "Please input tag name."
-	  		exit 0
+	if [ -z "$1" ]; then
+		echo "Please input tag name."
+		exit 0
 	fi
 
 	TAGNAME=$1
 	git tag -d $TAGNAME
 	git push origin :refs/tags/$TAGNAME
 	git push origin HEAD
-	git tag $TAGNAME
+  if [ -z "$2" ]; then
+    git tag -a $TAGNAME
+  else
+    git tag -a $TAGNAME -m "$2"
+  fi
 	git push origin --tags
 }
 
