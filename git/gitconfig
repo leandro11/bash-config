@@ -15,21 +15,21 @@
 	fe = fetch --all
 	up = remote update
 	pl = pull
-	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -
+	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -  # pull --rebase, stash if necessary
 	ps = push origin HEAD
-	psto = !sh -c 'git push ${1:-origin} HEAD' -
-	goto = !sh -c 'test ! -z $1 && (test -z \"`git status -uno -s`\" && git reset --hard $1 || (git stash && git reset --hard $1 && git pop))' -
+	psto = !sh -c 'git push ${1:-origin} HEAD' -  # push to remote other than origin
+	goto = !sh -c 'test ! -z $1 && (test -z \"`git status -uno -s`\" && git reset --hard $1 || (git stash && git reset --hard $1 && git pop))' -  # reset --hard and stash if necessary
 	pstag = push origin --tags
 	apply = stash apply
 	save = stash save
 	pop = stash pop
 	list = stash list
-	lgm = log --name-status --color --pretty=oneline --abbrev-commit
 	di = diff --color
 	mb = merge-base
 	pick = cherry-pick
 	unstage = reset HEAD
 	last = log -1
+	logs = log --name-status --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	contrib = shortlog --no-merges -s -n
 	author = shortlog --no-merges -s -n -e
