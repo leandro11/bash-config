@@ -19,8 +19,10 @@
 	ps = push origin HEAD
 	psto = !sh -c 'git push ${1:-origin} HEAD' -  # push to remote other than origin
 	goto = !sh -c 'test ! -z $1 && (test -z \"`git status -uno -s`\" && git reset --hard $1 || (git stash && git reset --hard $1 && git pop))' -  # reset --hard and stash if necessary
-	pstag = push origin --tags
-	tags = tag -l -n
+	pstag = push origin --tags  	# push all tags to remote
+	tags = tag -n  			# list all tags and messages
+	pltag = fetch --tags  		# fetch all tags from remote
+	rmtag = push -d origin 		# delete tag from remote
 	apply = stash apply
 	save = stash save
 	pop = stash pop
