@@ -27,7 +27,8 @@
 	pstag = push origin --tags  	# push all tags to remote
 	tags = tag -n  			# list all tags and messages
 	pltag = fetch --tags  		# fetch all tags from remote
-	rmtag = push -d origin 		# delete tag from remote
+	tagc = rev-list -n 1  		# get tag commit
+	rmtag = !sh -c 'test ! -z $1 && (git tag -d $1 && git push origin :refs/tags/$1) || echo "input tag name going to delete"' -  # delete tag from remote
 	apply = stash apply
 	save = stash save
 	pop = stash pop
