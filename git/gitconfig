@@ -4,17 +4,22 @@
 [alias]
 	cl = clone
 	ci = commit -m
+	ca = commit --amend
 	st = status
+	pl = pull
 	mg = merge
 	co = checkout
 	br = branch --color
 	ba = branch --color -a
+	di = diff --color
+	mb = merge-base
+	pick = cherry-pick
+	unstage = reset HEAD
 	brdel = push origin --delete
 	track = branch --track
 	tr = branch --track
 	fe = fetch --all
 	up = remote update
-	pl = pull
 	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -  # pull --rebase, stash if necessary
 	ps = push origin HEAD
 	psto = !sh -c 'git push ${1:-origin} HEAD' -  # push to remote other than origin
@@ -27,10 +32,6 @@
 	save = stash save
 	pop = stash pop
 	list = stash list
-	di = diff --color
-	mb = merge-base
-	pick = cherry-pick
-	unstage = reset HEAD
 	last = log -1
 	logs = log --name-status --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
