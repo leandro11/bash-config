@@ -7,7 +7,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 if [[ $(uname -s) == "Linux" ]]; then
-    alias ngx="service nginx restart"
+	alias ngx="service nginx restart"
 fi
 
 # for project folder
@@ -29,8 +29,8 @@ alias quaxcms='cd ~/Workspace/butterfly/quax/quax-cms'
 alias luotao="ssh root@luotao"
 alias luotao.sz="ssh root@luotao.sz"
 alias aimeipin.cc="ssh root@aimeipin"
-alias luotao.sz.start="ssh root@luotao.sz 'cd /opt/ozsales && ./script.sh restart'"
-alias luotao.start="ssh root@luotao 'cd /opt/ozsales && ./script.sh restart'"
+alias oz.sz.restart="ssh root@luotao.sz 'cd /opt/ozsales && ./script.sh restart'"
+alias oz.restart="ssh root@luotao 'cd /opt/ozsales && ./script.sh restart'"
 
 # for dev
 alias ac="source ./env/bin/activate"
