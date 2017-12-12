@@ -4,9 +4,8 @@ Host        yzrt
     User            root
 
 Host        zkdr
-    HostName        61.4.83.115
-    Port            54199
-    User            luotao
+    HostName        43.247.176.116
+    User            root
 
 Host        lorne
     HostName        lorne-luo-dev
