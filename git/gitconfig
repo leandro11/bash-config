@@ -10,6 +10,7 @@
 	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -  # pull --rebase, stash if necessary
 	mg = merge
 	co = checkout
+	cb = checkout -b
 	br = branch --color
 	ba = branch --color --all
 	tr = branch --track
