@@ -13,7 +13,7 @@
 	cb = checkout -b
 	br = branch --color
 	ba = branch --color --all
-	tr = branch --track
+	tr = !sh -c 'test ! -z $1 && git branch --set-upstream-to=origin/$1 $1 || echo "err: input remote branch name"' -
 	rb = push origin --delete  		# remove branch remotely
 	fe = fetch --all
 	up = remote update
