@@ -39,7 +39,7 @@
 	logs = log --name-status --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	contrib = shortlog --no-merges -s -n  					# committer cotribution by name
-	author = shortlog --no-merges -s -n -email 				# committer cotribution by email
+	author = shortlog --no-merges -s -n --email 				# committer cotribution by email
 	total = !sh -c 'git log --no-merges --pretty=format:"" | wc -l' -   	# total commit count
 	alias = config --get-regexp alias
 
