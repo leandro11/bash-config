@@ -9,12 +9,13 @@
 	pl = pull
 	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -  # pull --rebase, stash if necessary
 	mg = merge
+	rb = rebase
 	co = checkout
 	cb = checkout -b
 	br = branch --color
 	ba = branch --color --all
 	tr = !sh -c 'test ! -z $1 && git branch --set-upstream-to=origin/$1 $1 || echo "err: input remote branch name"' -
-	rb = push origin --delete  		# remove branch remotely
+	rmb = push origin --delete  		# remove branch remotely
 	fe = fetch --all
 	up = remote update
 	di = diff --color
