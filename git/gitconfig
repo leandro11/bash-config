@@ -23,6 +23,7 @@
 	rc = rm --cached
 	rv = remote -v
 	pi = cherry-pick
+	pick = cherry-pick
 	unstage = reset HEAD
 	ps = push origin HEAD
 	psf = push origin HEAD -f
@@ -32,7 +33,7 @@
 	plt = fetch --tags  		# fetch all tags from remote
 	tagc = rev-list -n 1  		# get tag commit
 	tags = tag --sort=v:refname --format='%(refname:strip=2)    %(contents:lines=1) <%(*authordate:relative)>'  # list all tags and messages
-	tagv = tag --list 'v*' --sort=v:refname --format='%(refname:strip=2)    %(contents:lines=1) <%(*authordate:relative)>'  # list all version tags and messages
+	v = tag --list 'v*' --sort=v:refname --format='%(refname:strip=2)    %(contents:lines=1) <%(*authordate:relative)>'  # list all version tags and messages
 	rmtag = !sh -c 'test ! -z $1 && (git tag -d $1 && git push origin :refs/tags/$1) || echo "input tag name going to delete"' -  # delete tag from remote
 	apply = stash apply
 	save = stash save
