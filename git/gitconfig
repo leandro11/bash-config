@@ -30,6 +30,8 @@
 	psto = !sh -c 'git push ${1:-origin} HEAD' -  	# push to remote other than origin
 	rh = !sh -c 'test ! -z $1 && (test -z \"`git status -uno -s`\" && git reset --hard $1 || (git stash && git reset --hard $1 && git pop))' -  # reset --hard and stash if necessary
 	pst = push origin --tags  			# push all tags to remote
+	pstoall = !sh -c 'git remote | xargs -L1 -I R git push R HEAD'  # push HEAD to all remotes
+	psall = !sh -c 'git remote | xargs -L1 git push --all'  # push all branch to all remotes
 	plt = fetch --tags  		# fetch all tags from remote
 	tagc = rev-list -n 1  		# get tag commit
 	tags = tag --sort=v:refname --format='%(refname:strip=2)    %(contents:lines=1) <%(*authordate:relative)>'  # list all tags and messages

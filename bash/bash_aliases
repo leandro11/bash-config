@@ -44,6 +44,7 @@ alias makemigrations="python manage.py makemigrations"
 alias showmigrations="python manage.py showmigrations"
 alias showmi="python manage.py showmigrations"
 alias code="python manage.py code"
+alias dbshell="python manage.py dbshell"
 alias collectstatic="python manage.py collectstatic --noinput"
 alias manage="python manage.py "
 
