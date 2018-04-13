@@ -1,21 +1,16 @@
 [user]
 	name = Lorne
-	email = dev@luotao.net
+	email = lorne.luo@butterfly.com.au
 [alias]
+# BASIC
 	cl = clone
 	ci = commit -m
-	ca = commit --amend
-	st = status
-	pl = pull
-	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -  # pull --rebase, stash if necessary
 	mg = merge
-	rb = rebase
+	st = status
 	co = checkout
 	cb = checkout -b
-	br = branch --color
-	ba = branch --color --all
-	tr = !sh -c 'test ! -z $1 && git branch --set-upstream-to=origin/$1 $1 || echo "err: input remote branch name"' -
-	rmb = push origin --delete  		# remove branch remotely
+	ca = commit --amend
+	rb = rebase
 	fe = fetch --all
 	up = remote update
 	di = diff --color
@@ -25,29 +20,80 @@
 	pi = cherry-pick
 	pick = cherry-pick
 	unstage = reset HEAD
+
+# BRANCH
+	br = branch --color
+	ba = branch --color --all
+	
+	# track same name branch from remote to local 
+	tr = !sh -c 'test ! -z $1 && git branch --set-upstream-to=origin/$1 $1 || echo "err: input remote branch name"' -
+	
+	# remove branch remotely
+	rmb = push origin --delete
+	
+	# reset --hard and stash if necessary
+	rh = !sh -c 'test ! -z $1 && (test -z \"`git status -uno -s`\" && git reset --hard $1 || (git stash && git reset --hard $1 && git pop))' -
+
+# PULL
+	pl = pull
+	plt = fetch --tags  # pull all tags from remote
+	# pull --rebase, stash if necessary
+	plr = !sh -c 'test -z \"`git status -uno -s`\" && git pull --rebase || (git stash && git pull --rebase && git pop)' -
+
+# PUSH	
 	ps = push origin HEAD
 	psf = push origin HEAD -f
-	psto = !sh -c 'git push ${1:-origin} HEAD' -  	# push to remote other than origin
-	rh = !sh -c 'test ! -z $1 && (test -z \"`git status -uno -s`\" && git reset --hard $1 || (git stash && git reset --hard $1 && git pop))' -  # reset --hard and stash if necessary
-	pst = push origin --tags  			# push all tags to remote
-	pstoall = !sh -c 'git remote | xargs -L1 -I R git push R HEAD'  # push HEAD to all remotes
-	psall = !sh -c 'git remote | xargs -L1 git push --all'  # push all branch to all remotes
-	plt = fetch --tags  		# fetch all tags from remote
-	tagc = rev-list -n 1  		# get tag commit
-	tags = tag --sort=v:refname --format='%(refname:strip=2)    %(contents:lines=1) <%(*authordate:relative)>'  # list all tags and messages
-	v = tag --list 'v*' --sort=v:refname --format='%(refname:strip=2)    %(contents:lines=1) <%(*authordate:relative)>'  # list all version tags and messages
-	rmtag = !sh -c 'test ! -z $1 && (git tag -d $1 && git push origin :refs/tags/$1) || echo "input tag name going to delete"' -  # delete tag from remote
+
+	# push to specified remote
+	psto = !sh -c 'git push ${1:-origin} HEAD' -
+	
+	# push all tags to origin remote
+	pst = push origin --tags
+
+	# push HEAD to all remotes
+	pstoall = !sh -c 'git remote | xargs -L1 -I R git push R HEAD'
+	
+	# push all branch to all remotes
+	psall = !sh -c 'git remote | xargs -L1 git push --all'
+
+# TAG
+	v = !sh -c 'git ver $1' -
+	# get commit by tag name
+	tagc = rev-list -n 1
+
+	# list all tags and messages
+	tags = tag --sort=v:refname --format='%(refname:strip=2) %(contents:lines=1) <%(*authordate:relative)>'
+
+	# list all version tag or get version by commit hash
+	ver = !sh -c 'test ! -z $1 && (git tag --list \"v*\" --sort=v:refname --format=\"%(refname:strip=2) %(contents:lines=1) <%(*authordate:relative)>\" --contains $1 | head -1) || git tag -l \"v*\" --sort=v:refname --format=\"%(refname:strip=2) %(contents:lines=1) <%(*authordate:relative)>\" $1' -
+
+	# delete tag from remote
+	rmtag = !sh -c 'test ! -z $1 && (git tag -d $1 && git push origin :refs/tags/$1) || echo "input tag name going to delete"' -
+
+# STASH
 	apply = stash apply
 	save = stash save
 	pop = stash pop
 	list = stash list
+
+# LOG
 	last = log -1
 	logs = log --name-status --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	contrib = shortlog --no-merges -s -n  					# committer cotribution by name
-	author = shortlog --no-merges -s -n --email 				# committer cotribution by email
-	total = !sh -c 'git log --no-merges --pretty=format:"" | wc -l' -   	# total commit count
+	rlog = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --reverse
+	l = !sh -c 'git lg'
+
+# OTHER
+	# committer cotributions by name
+	contrib = shortlog --no-merges -s -n
+	
+	# committer cotribution by email
+	author = shortlog --no-merges -s -n --email
+	
+	# total commit count exlude merge commit
+	total = !sh -c 'git log --no-merges --pretty=format:"" | wc -l' -
+	
+	# print all git alias
 	alias = config --get-regexp alias
 
 [push]
@@ -87,3 +133,4 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
+
