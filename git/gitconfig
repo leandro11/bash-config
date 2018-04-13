@@ -15,9 +15,8 @@
 	up = remote update
 	di = diff --color
 	mb = merge-base
-	rc = rm --cached
+	rmc = rm --cached
 	rv = remote -v
-	pi = cherry-pick
 	pick = cherry-pick
 	unstage = reset HEAD
 
@@ -78,16 +77,22 @@
 
 # LOG
 	last = log -1
-	logs = log --name-status --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	rlog = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --reverse
 	l = !sh -c 'git lg'
 
+	# customized log format
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	
+	# reverse logs
+	rlog = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --reverse
+
+	# log with files changed
+	logs = !sh -c 'git lg --name-status'
+
 # OTHER
-	# committer cotributions by name
+	# contributors by name
 	contrib = shortlog --no-merges -s -n
 	
-	# committer cotribution by email
+	# cotributors by email
 	author = shortlog --no-merges -s -n --email
 	
 	# total commit count exlude merge commit
