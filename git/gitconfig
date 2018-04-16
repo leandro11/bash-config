@@ -76,6 +76,7 @@
 	list = stash list
 
 # LOG
+	wc = whatchanged
 	last = log -1
 	l = !sh -c 'git lg'
 
