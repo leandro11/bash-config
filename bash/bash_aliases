@@ -1,6 +1,6 @@
 
 if [[ $(uname -s) == "Darwin" ]]; then
-	alias my="sudo mysql.server start"
+	alias my="mysql.server start"
 	alias down="cd ~/Downloads"
 	alias doc="cd ~/Documents"
 	alias work="cd ~/Workspace"

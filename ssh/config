@@ -3,6 +3,10 @@ Host        yzrt
     Port            54199
     User            root
 
+Host        aimeipin
+    HostName        101.201.106.18
+    User            root
+
 Host        zkdr
     HostName        43.247.176.116
     User            root
