@@ -64,7 +64,7 @@
 	tags = tag --sort=v:refname --format='%(refname:strip=2) %(contents:lines=1) <%(*authordate:relative)>'
 
 	# list all version tag or get version by commit hash
-	ver = !sh -c 'test ! -z $1 && (git tag --list \"v*\" --sort=v:refname --format=\"%(refname:strip=2) %(contents:lines=1) <%(*authordate:relative)>\" --contains $1 | head -1) || git tag -l \"v*\" --sort=v:refname --format=\"%(refname:strip=2) %(contents:lines=1) <%(*authordate:relative)>\" $1' -
+	ver = !sh -c 'test ! -z $1 && (git tag --list \"v*\" --sort=v:refname --format=\"%(tag) <%(*authordate:relative)> %(contents:lines=1)\" --contains $1 | head -1) || git tag -l \"v*\" --sort=v:refname --format=\"%(tag) <%(*authordate:relative)> %(contents:lines=1)\" $1' -
 
 	# delete tag from remote
 	rmtag = !sh -c 'test ! -z $1 && (git tag -d $1 && git push origin :refs/tags/$1) || echo "input tag name going to delete"' -
