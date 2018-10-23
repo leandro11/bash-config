@@ -14,6 +14,15 @@ alias fq='cd ~/Workspace/butterfly/freightquotes/'
 alias fodmap='cd ~/Workspace/butterfly/fodmap-platform/'
 alias butterfly='cd ~/Workspace/butterfly/'
 alias quaxstart="redis && mgdb && rabbit"
+alias quaxstaging="ssh -i "/Users/lorne.luo/.ssh/quax-PROD.pem" ubuntu@54.206.108.85"
+alias reformdb="psql postgres://uhbfuqkoydevhw:3b83028d15c8bc68caeab7d3c96683c65cdb532e0f336bbf77b575f26716d297@ec2-54-225-119-223.compute-1.amazonaws.com:5432/dc6r4kcn329rng"
+alias reformdb2="PGPASSWORD=3b83028d15c8bc68caeab7d3c96683c65cdb532e0f336bbf77b575f26716d297 psql -h ec2-54-225-119-223.compute-1.amazonaws.com -p 5432 -U uhbfuqkoydevhw dc6r4kcn329rng"
+alias fqtest="ssh testfq@staging03"
+
+alias cci="cd /Users/lorne.luo/Workspace/butterfly/cci-insights"
+alias cci.restart='ssh lorne-luo-dev '\''cd /data/butterfly/cci-insights && ./shell.sh redeploy'\'''
+alias cci_qa="ssh web@ccinsights-new.qa.butterfly.com.au"
+alias cci_staging="ssh web@ccinsights-new.staging.butterfly.com.au"
 
 # quax prod
 alias sshquaxapi='ssh -i "/Users/lorne.luo/.ssh/quax-PROD.pem" ubuntu@52.65.218.40'

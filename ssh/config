@@ -26,3 +26,20 @@ Host        luotao.sz
     User            root
     IdentityFile    ~/.ssh/id_rsa
 
+Host ccinsights-new-qa-web ccinsights-new.qa.butterfly.com.au
+Hostname 13.70.180.180
+IdentityFile ~/.ssh/cci-staging.pem
+User web
+Port 22
+
+Host ccinsights-new-st-web ccinsights-new.staging.butterfly.com.au
+Hostname 13.70.149.106
+IdentityFile ~/.ssh/cci-staging.pem
+User web
+Port 22
+
+Host git.luotao.net
+ HostName luotao.net
+ IdentityFile ~/.ssh/id_rsa
+ User git
+

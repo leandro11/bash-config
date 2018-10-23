@@ -15,12 +15,13 @@ alias work="cd ~/Workspace"
 alias butterfly="cd ~/Workspace/butterfly"
 alias android="cd ~/Workspace/AndroidStudioProjects"
 alias oz="cd ~/Workspace/ozsales"
+alias reform="cd /Users/lorne.luo/Workspace/butterfly/reform-clothing"
 alias per="cd ~/Workspace/persimmon"
 alias om="cd ~/Workspace/omnimw"
 alias bashconfig="cd ~/bash-config/"
 alias aimeipin="cd ~/Workspace/aimeipin"
 alias sms="cd ~/Workspace/AndroidStudioProjects/SMSRedirector"
-alias taobao="cd ~/Workspace/taobao"
+alias taobao="cd /Users/lorne.luo/Workspace/lorne/taobao"
 alias quax='cd ~/Workspace/butterfly/quax'
 alias quaxcms='cd ~/Workspace/butterfly/quax/quax-cms'
 
@@ -70,6 +71,7 @@ alias qfind="find . -name "
 alias findf="find . -type f | xargs grep -s -R -n "
 
 # for git, add tag and push (overwrite existed)
+alias gitl="git lg"
 gittag() {
 	if [ -z "$1" ]; then
 		echo "Please input tag name."
