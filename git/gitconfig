@@ -19,6 +19,7 @@
 	rv = remote -v
 	pick = cherry-pick
 	unstage = reset HEAD
+	all = add --all
 
 # BRANCH
 	br = branch --color
