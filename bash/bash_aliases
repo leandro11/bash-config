@@ -66,6 +66,7 @@ alias mkdir='mkdir -pv'
 alias which='type -all'    # which:        Find executables
 alias path='echo -e ${PATH//:/\\n}' 
 alias qfind="find . -name "
+alias guetzli="/usr/local/Cellar/guetzli/1.0.1/bin/guetzli --quality 84"
 
 # find text in all files under current folder
 alias findf="find . -type f | xargs grep -s -R -n "
