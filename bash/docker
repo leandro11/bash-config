@@ -1,17 +1,17 @@
 # for docker
 alias dc="docker"
-alias dcps="docker ps"
-alias dcpl="docker pull"
-alias dcpsa="docker ps -a"
+alias dcps="docker ps" # show live container
+alias dcpl="docker pull" # pull images
+alias dcpsa="docker ps -a" # show all container
 alias dci="docker images"
-alias dcrm="docker rm"
-alias dcrmi="docker rmi"
-alias dcrun="docker run -it -u='root'"
-alias dcexe="docker exec -it -u='root'"
-alias dcrmx='docker rm $(docker ps -q -f status=exited)'
-alias dcrmx='docker ps -q -f status=exited | xargs docker rm'
-alias dcrmall='docker rm -f $(docker ps -q -a)'
-alias dcstopall='docker stop $(docker ps -q)'
-alias dl='docker ps -l -q'
-alias dcrminone="docker rmi $(docker images | grep "^<none>" | awk -F' ' '{ print $3}')"
-alias dcrmix="docker images | awk '/^<none>/ {print $3}' | xargs docker rmi"
+alias dcrm="docker rm" # delete container
+alias dcrmi="docker rmi" # delete image
+alias dcrun="docker run -it -u='root'" # run image with interactive mode
+alias dcexe="docker exec -it -u='root'" # enter container
+alias dcrmx='docker rm $(docker ps -q -f status=exited)'  
+alias dcrmx='docker ps -q -f status=exited | xargs docker rm' # remove all dead container
+alias dcrmall='docker rm -f $(docker ps -q -a)' # remove all container
+alias dcstopall='docker stop $(docker ps -q)' # stop all container
+alias dl='docker ps -l -q' # list container id
+alias dcrminone="docker rmi $(docker images | grep "^<none>" | awk -F' ' '{ print $3}')" # remove all untag images
+alias dcrmix="docker images | awk '/^<none>/ {print $3}' | xargs docker rmi" # remove all untag images
