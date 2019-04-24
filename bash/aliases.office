@@ -8,6 +8,7 @@ alias redis="redis-server --daemonize yes"
 alias rabbit="/usr/local/opt/rabbitmq/sbin/rabbitmq-server -detached"
 
 
+alias gue="guetzli --quality 84 "
 alias oz="cd ~/Workspace/lorne/ozsales"
 alias bashconfig="cd ~/Workspace/bash-config/"
 alias fq='cd ~/Workspace/butterfly/freightquotes/'

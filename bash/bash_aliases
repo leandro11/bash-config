@@ -15,6 +15,7 @@ alias work="cd ~/Workspace"
 alias butterfly="cd ~/Workspace/butterfly"
 alias android="cd ~/Workspace/AndroidStudioProjects"
 alias oz="cd ~/Workspace/ozsales"
+alias qs="deactivate && cd /Users/lorne.luo/Workspace/lorne/qsforex && source /Users/lorne.luo/venv/qsforex/bin/activate"
 alias reform="cd /Users/lorne.luo/Workspace/butterfly/reform-clothing"
 alias per="cd ~/Workspace/persimmon"
 alias om="cd ~/Workspace/omnimw"
@@ -24,10 +25,11 @@ alias sms="cd ~/Workspace/AndroidStudioProjects/SMSRedirector"
 alias taobao="cd /Users/lorne.luo/Workspace/lorne/taobao"
 alias quax='cd ~/Workspace/butterfly/quax'
 alias quaxcms='cd ~/Workspace/butterfly/quax/quax-cms'
-
+alias ju="deactivate & conda activate && cd /Users/lorne.luo/Workspace/lorne/jupyter-notebook"
+alias ec2="ssh -i ~/.ssh/lorne.pem ec2-user@ec2-3-16-54-30.us-east-2.compute.amazonaws.com"
 
 # for ssh
-alias luotao="ssh root@luotao"
+alias luotao="ssh luotao@luotao"
 alias luotao.sz="ssh root@luotao.sz"
 alias aimeipin.cc="ssh root@aimeipin"
 alias oz.sz.restart="ssh root@luotao.sz 'cd /opt/ozsales && ./script.sh restart'"
@@ -36,6 +38,9 @@ alias oz.restart="ssh root@luotao 'cd /opt/ozsales && ./script.sh restart'"
 # for dev
 alias ac="source ./env/bin/activate"
 alias de="deactivate"
+alias deconda="conda deactivate"
+
+alias ju2py="jupyter nbconvert --to script "
 
 # for django
 alias djtest="python manage.py test --noinput --nologcapture -s "
@@ -66,6 +71,8 @@ alias mkdir='mkdir -pv'
 alias which='type -all'    # which:        Find executables
 alias path='echo -e ${PATH//:/\\n}' 
 alias qfind="find . -name "
+alias deconda="conda deactivate"
+alias acconda="conda activate"
 alias guetzli="/usr/local/Cellar/guetzli/1.0.1/bin/guetzli --quality 84"
 
 # find text in all files under current folder
