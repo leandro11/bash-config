@@ -18,8 +18,11 @@ Host        lorne
 
 Host        luotao
     HostName        47.91.45.25
-    User            root
+    Port            54199
+    User            luotao
     IdentityFile    ~/.ssh/id_rsa
+	ServerAliveInterval 7200
+ 	ServerAliveCountMax 5
 
 Host        luotao.sz
     HostName        119.23.79.1
@@ -39,7 +42,8 @@ User web
 Port 22
 
 Host git.luotao.net
- HostName luotao.net
- IdentityFile ~/.ssh/id_rsa
- User git
+	HostName luotao.net
+	IdentityFile ~/.ssh/id_rsa
+	User git
+	Port 54199
 
