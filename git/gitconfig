@@ -1,8 +1,10 @@
 [user]
 	name = Lorne
-	email = lorne.luo@butterfly.com.au
+	email = dev@luotao.net
 [alias]
 # BASIC
+	a = add
+	c = commit
 	cl = clone
 	ci = commit -m
 	mg = merge
@@ -20,6 +22,7 @@
 	pick = cherry-pick
 	unstage = reset HEAD
 	all = add --all
+	pp = pop
 
 # BRANCH
 	br = branch --color
@@ -43,6 +46,7 @@
 # PUSH	
 	ps = push origin HEAD
 	psf = push origin HEAD -f
+	deploy = push origin master
 
 	# push to specified remote
 	psto = !sh -c 'git push ${1:-origin} HEAD' -
@@ -51,7 +55,7 @@
 	pst = push origin --tags
 
 	# push HEAD to all remotes
-	pstoall = !sh -c 'git remote | xargs -L1 -I R git push R HEAD'
+	pstoall = !sh -c 'git remote | grep -v  "fork" | xargs -L1 -I R git push R HEAD'
 	
 	# push all branch to all remotes
 	psall = !sh -c 'git remote | xargs -L1 git push --all'
@@ -77,6 +81,7 @@
 	list = stash list
 
 # LOG
+	sv = status -vv
 	wc = whatchanged
 	last = log -1
 	l = !sh -c 'git lg'
@@ -106,7 +111,7 @@
 [push]
 	default = matching
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/lorne.luo/.gitignore_global
 	editor = vim
 [filter "hawser"]
 	clean = git hawser clean %f
@@ -141,3 +146,7 @@
 	required = true
 	process = git-lfs filter-process
 
+[commit]
+	template = /Users/lorne.luo/.stCommitMsg
+[credential "https://git-codecommit.ap-southeast-2.amazonaws.com"]
+	UseHttpPath = true
